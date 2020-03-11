@@ -1,0 +1,7 @@
+.posts{
+    grid-area: posts;
+    background-color: aqua;
+}
+.posts img{
+    width: 100px;
+}

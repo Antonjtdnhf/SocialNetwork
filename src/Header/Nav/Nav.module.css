@@ -1,0 +1,17 @@
+.nav{
+
+    grid-area: nav;
+    background-color:green;
+
+}
+
+ul{
+    display: flex;
+
+}
+
+ul li {
+
+    list-style-type: none;
+    margin: 0 auto;
+}

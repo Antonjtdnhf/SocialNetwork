@@ -1,0 +1,27 @@
+.post {
+    margin-top : 40px;
+}
+.post img {
+    width : 60px;
+    border-radius: 30px;
+
+}
+.user {
+    display: flex;
+    margin: 7px;
+}
+.user span {
+    text-align: center;
+    display: inline-block;
+    padding: 19px 0 0 10px ;
+}
+.post_text {
+    border: solid 2px lightcoral;
+    padding: 15px;
+    width: 400px;
+
+}
+
+.like {
+
+}
