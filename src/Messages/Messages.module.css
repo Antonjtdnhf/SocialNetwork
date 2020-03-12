@@ -1,0 +1,21 @@
+.messages {
+    display:grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.dialog_users {
+
+}
+
+.dialog_items {
+
+}
+
+.dialog_item {
+
+}
+
+.dialog_user {
+
+}

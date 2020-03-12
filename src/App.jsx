@@ -25,6 +25,7 @@ const App = () => {
                 <Route path="/posts" component={About_me}/>
                 <Route path='/posts' component={Posts}/>
                 <Route path="/posts" component={Last_photos}/>
+                <Route path="/messages" component={About_me}/>
                 <Route path='/messages' component={Messages}/>
                 <Route path="/videos" component={Videos}/>
                 <Route path="/photos" component={Photos}/>

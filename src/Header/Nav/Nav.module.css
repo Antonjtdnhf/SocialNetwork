@@ -15,3 +15,12 @@ ul li {
     list-style-type: none;
     margin: 0 auto;
 }
+
+.nav a{
+    text-decoration: none;
+    color: silver;
+}
+
+.nav a.active {
+    color: dimgrey;
+}
