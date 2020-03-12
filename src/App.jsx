@@ -17,19 +17,22 @@ import Photos from "./Photos/Photos";
 import Profile from "./Profile/Profile";
 
 
-const App = () => {
+const App = (props) => {
+
+
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Route path="/posts" component={About_me}/>
-                <Route path='/posts' component={Posts}/>
-                <Route path="/posts" component={Last_photos}/>
-                <Route path="/messages" component={About_me}/>
-                <Route path='/messages' component={Messages}/>
-                <Route path="/videos" component={Videos}/>
-                <Route path="/photos" component={Photos}/>
-                <Route path="/profile" component={Profile}/>
+                <Route path="/posts" render={ () => <About_me />}/>
+                <Route path='/posts' render={ () => <Posts postsData={props.postsData} />}/>
+                <Route path="/posts" render={ () => <Last_photos />}/>
+                <Route path="/messages" render={ () => <About_me />}/>
+                <Route path='/messages' render={ () => <Messages dialogsUsersData={props.dialogsUsersData} messagesData={props.messagesData}/>}/>
+                <Route path="/videos" render={ () => <Videos />}/>
+                <Route path="/photos" render={ () => <Photos />}/>
+                <Route path="/profile" render={ () => <Profile />}/>
                 <Footer/>
             </div>
         </BrowserRouter>
