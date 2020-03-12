@@ -7,7 +7,7 @@ const Posts = () => {
     return (
         <div className={s.posts}>
             <Add_new_post/>
-            <Post message="xyu" likesCount="15"/>
+            <Post message="You didn't see anything" likesCount="15"/>
             <Post message="react top" likesCount="13"/>
             <Post message="i'm impressive" likesCount="8"/>
             <Post message="go next" likesCount="80"/>
