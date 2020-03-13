@@ -19,17 +19,17 @@ import Profile from "./Components/Profile/Profile";
 
 const App = (props) => {
 
-
+debugger;
 
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Route path="/posts" render={ () => <About_me />}/>
-                <Route path='/posts' render={ () => <Posts postsData={props.postsData} />}/>
+                <Route path='/posts' render={ () => <Posts postsData={props.state.timelinePage.postsData} />}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
                 <Route path="/messages" render={ () => <About_me />}/>
-                <Route path='/messages' render={ () => <Messages dialogsUsersData={props.dialogsUsersData} messagesData={props.messagesData}/>}/>
+                <Route path='/messages' render={ () => <Messages dialogsUsersData={props.state.messagesPage.dialogsUsersData} messagesData={props.state.messagesPage.messagesData}/>}/>
                 <Route path="/videos" render={ () => <Videos />}/>
                 <Route path="/photos" render={ () => <Photos />}/>
                 <Route path="/profile" render={ () => <Profile />}/>

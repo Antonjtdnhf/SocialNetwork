@@ -10,6 +10,8 @@ import Post from './Post/Post.jsx';
 
 const Posts = (props) => {
 
+    debugger;
+
     let postsElements = props.postsData.map( (p) => {
         return (
             <Post message={p.message} likesCount={p.likesCount}/>
