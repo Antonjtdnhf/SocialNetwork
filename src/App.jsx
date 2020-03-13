@@ -15,18 +15,19 @@ import {Route , BrowserRouter} from "react-router-dom";
 import Videos from "./Components/Videos/Videos";
 import Photos from "./Components/Photos/Photos";
 import Profile from "./Components/Profile/Profile";
+import {addPost} from "./Redux/state";
 
 
 const App = (props) => {
 
-debugger;
+
 
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Route path="/posts" render={ () => <About_me />}/>
-                <Route path='/posts' render={ () => <Posts postsData={props.state.timelinePage.postsData} />}/>
+                <Route path='/posts' render={ () => <Posts postsData={props.state.timelinePage.postsData} addPost={props.addPost} />}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
                 <Route path="/messages" render={ () => <About_me />}/>
                 <Route path='/messages' render={ () => <Messages dialogsUsersData={props.state.messagesPage.dialogsUsersData} messagesData={props.state.messagesPage.messagesData}/>}/>

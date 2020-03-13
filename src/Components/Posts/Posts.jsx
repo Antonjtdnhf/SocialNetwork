@@ -10,7 +10,7 @@ import Post from './Post/Post.jsx';
 
 const Posts = (props) => {
 
-    debugger;
+
 
     let postsElements = props.postsData.map( (p) => {
         return (
@@ -21,7 +21,7 @@ const Posts = (props) => {
 
     return (
         <div className={s.posts}>
-            <Add_new_post/>
+            <Add_new_post addPost={props.addPost}/>
             {postsElements}
         </div>
     );

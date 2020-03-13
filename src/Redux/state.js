@@ -26,4 +26,14 @@ let state = {
     }
 }
 
+export let addPost = (newPostText) => {
+
+    let newPost = {
+        message: newPostText,
+        likesCount: 0,
+    }
+    state.timelinePage.postsData.push(newPost);
+};
+
+
 export default state;
