@@ -1,17 +1,24 @@
 import React, {createRef} from 'react';
-import s from "./Add_new_post.module.css";
+import s from './Add_new_post.module.css';
 
 const Add_new_post = (props) => {
 
-    let newPostText = createRef();
+    let text = createRef();
     let addPost = () => {
-        props.addPost(newPostText.current.value);
+        props.addPost(text.current.value);
+
+
     };
+
+    let das = () => {
+        props.changeTextArea(text.current.value);
+        text.current.value = props.postTextArea;
+    }
 
 
     return (
         <div className={s.add_new_post}>
-            <textarea ref={newPostText}></textarea>
+            <textarea onChange={ das } ref={text} value={props.postTextArea}></textarea>
             <br/>
             <button type="submit" onClick={addPost} >Post</button>
             <button type="reset">Reset</button>

@@ -5,14 +5,14 @@ import {NavLink} from "react-router-dom";
 
 const Messages = (props) => {
 
-    const Dialog_item = (props) => {
+    const DialogItem = (props) => {
 
         return (
             <div className={s.dialog_item}>{props.message}</div>
         )
     };
 
-    const Dialog_user = (props) => {
+    const DialogUser = (props) => {
 
         let path = "/messages/" + props.id;
 
@@ -25,13 +25,13 @@ const Messages = (props) => {
 
     let dialogsElements = props.dialogsUsersData.map((u) => {
             return (
-                <Dialog_user name={u.name} id={u.id}/>
+                <DialogUser name={u.name} id={u.id}/>
             )
         }
     );
     let messagesElements = props.messagesData.map((m) => {
             return (
-                <Dialog_item message={m.message} id={m.id}/>
+                <DialogItem message={m.message} id={m.id}/>
             )
         }
     );
