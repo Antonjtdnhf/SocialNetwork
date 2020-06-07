@@ -1,53 +1,60 @@
+const store = {
 
+    _state : {
+        timelinePage: {
+            postsData: [
+                {message: "You didn't see anything", likesCount: "15"},
+                {message: "react top", likesCount: "13"},
+                {message: "i'm impressive", likesCount: "8"},
+                {message: "go next", likesCount: "80"}
+            ],
+            postTextArea: 'asdf',
+        },
 
-let rerenderEntireTree = () => {}
+        messagesPage: {
+            dialogsUsersData: [
+                {name: "Sasha", id: "1"},
+                {name: "John", id: "2"},
+                {name: "Kate", id: "3"},
+                {name: "Tom", id: "4"}
+            ],
 
-let state = {
-    timelinePage : {
-        postsData: [
-            {message: "You didn't see anything", likesCount: "15"},
-            {message: "react top", likesCount: "13"},
-            {message: "i'm impressive", likesCount: "8"},
-            {message: "go next", likesCount: "80"}
-        ],
-        postTextArea : 'asdf',
+            messagesData: [
+                {id: 1, message: "Hi Sasha!"},
+                {id: 2, message: "Hi John!"},
+                {id: 3, message: "Hi Kate!"},
+                {id: 4, message: "Hi Tom!"}
+            ]
+        }
     },
 
-    messagesPage : {
-        dialogsUsersData: [
-            {name: "Sasha", id: "1"},
-            {name: "John", id: "2"},
-            {name: "Kate", id: "3"},
-            {name: "Tom", id: "4"}
-        ],
+    getState() {
+      return this._state
+    },
 
-        messagesData: [
-            {id: 1, message: "Hi Sasha!"},
-            {id: 2, message: "Hi John!"},
-            {id: 3, message: "Hi Kate!"},
-            {id: 4, message: "Hi Tom!"}
-        ]
+    rerenderEntireTree() {
+    },
+
+
+    addPost ()  {
+
+        let newPost = {
+            message: this._state.timelinePage.postTextArea,
+            likesCount: 0
+        }
+        this._state.timelinePage.postsData.push(newPost);
+        this._state.timelinePage.postTextArea = '';
+        this.rerenderEntireTree(this._state);
+    },
+
+
+    changeTextArea (message) {
+        this._state.timelinePage.postTextArea = message;
+        this.rerenderEntireTree(this._state);
+    },
+
+    subscribe (observer) {
+        this.rerenderEntireTree = observer;
     }
 }
-
-export const addPost = () => {
-
-    let newPost = {
-        message: state.timelinePage.postTextArea,
-        likesCount: 0
-    }
-    state.timelinePage.postsData.push(newPost);
-    state.timelinePage.postTextArea = '';
-    rerenderEntireTree(state);
-};
-
-
-export const changeTextArea = (message) => {
-    state.timelinePage.postTextArea = message;
-    rerenderEntireTree(state);
-}
-
-export const subscribe = (observer) => {
-    rerenderEntireTree = observer;
-}
-export default state;
+export default store;
