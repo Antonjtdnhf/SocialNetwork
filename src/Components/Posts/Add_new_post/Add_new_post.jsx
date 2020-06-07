@@ -5,7 +5,7 @@ const Add_new_post = (props) => {
 
     let text = createRef();
     let addPost = () => {
-        props.addPost(text.current.value);
+        props.addPost("ADD_NEW_POST");
 
 
     };

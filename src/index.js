@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 
 export const rerenderEntireTree = (state) => {
     ReactDOM.render(<App state={store.getState()}
-                         addPost={store.addPost.bind(store)}
+                         addPost={store.dispatch.bind(store)}
                          changeTextArea={store.changeTextArea.bind(store)}  />, document.getElementById('root'));
 }
 

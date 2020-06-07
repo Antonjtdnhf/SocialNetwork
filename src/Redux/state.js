@@ -32,25 +32,26 @@ const store = {
       return this._state
     },
 
+    dispatch(action) {
+        if (action === "ADD_NEW_POST") {
+            let newPost = {
+                message: this._state.timelinePage.postTextArea,
+                likesCount: 0
+            }
+            this._state.timelinePage.postsData.push(newPost);
+            this._state.timelinePage.postTextArea = '';
+            this.rerenderEntireTree(this._state);
+        } else if (action === "CHANGE_TEXT_AREA") {
+
+        }
+    },
+
     rerenderEntireTree() {
     },
 
 
-    addPost ()  {
-
-        let newPost = {
-            message: this._state.timelinePage.postTextArea,
-            likesCount: 0
-        }
-        this._state.timelinePage.postsData.push(newPost);
-        this._state.timelinePage.postTextArea = '';
-        this.rerenderEntireTree(this._state);
-    },
-
-
     changeTextArea (message) {
-        this._state.timelinePage.postTextArea = message;
-        this.rerenderEntireTree(this._state);
+
     },
 
     subscribe (observer) {
