@@ -33,7 +33,7 @@ const store = {
     },
 
     dispatch(action) {
-        if (action === "ADD_NEW_POST") {
+        if (action.type === "ADD_NEW_POST") {
             let newPost = {
                 message: this._state.timelinePage.postTextArea,
                 likesCount: 0
@@ -41,17 +41,13 @@ const store = {
             this._state.timelinePage.postsData.push(newPost);
             this._state.timelinePage.postTextArea = '';
             this.rerenderEntireTree(this._state);
-        } else if (action === "CHANGE_TEXT_AREA") {
-
+        } else if (action.type === "CHANGE_TEXT_AREA") {
+            this._state.timelinePage.postTextArea = action.message;
+            this.rerenderEntireTree(store._state);
         }
     },
 
     rerenderEntireTree() {
-    },
-
-
-    changeTextArea (message) {
-
     },
 
     subscribe (observer) {

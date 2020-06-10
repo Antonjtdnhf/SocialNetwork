@@ -23,8 +23,8 @@ const App = (props) => {
                 <Header/>
                 <Route path="/posts" render={ () => <About_me />}/>
                 <Route path='/posts' render={ () => <Posts postsData={props.state.timelinePage.postsData}
-                                                           addPost={props.addPost}
-                                                           changeTextArea={props.changeTextArea}
+                                                           dispatch={props.dispatch}
+                                                           dispatch={props.dispatch}
                                                            postTextArea={props.state.timelinePage.postTextArea}/>}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
                 <Route path="/messages" render={ () => <About_me />}/>
