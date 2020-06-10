@@ -5,9 +5,6 @@ import Post from './Post/Post.jsx';
 
 
 
-
-
-
 const Posts = (props) => {
 
 

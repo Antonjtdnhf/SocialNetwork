@@ -15,7 +15,7 @@ import {Route , BrowserRouter} from "react-router-dom";
 import Videos from "./Components/Videos/Videos";
 import Photos from "./Components/Photos/Photos";
 import Profile from "./Components/Profile/Profile";
-import {addPost} from "./Redux/state";
+
 
 
 const App = (props) => {
@@ -37,7 +37,10 @@ const App = (props) => {
                 <Footer/>
             </div>
         </BrowserRouter>
+
+
     );
+
 };
 
 
