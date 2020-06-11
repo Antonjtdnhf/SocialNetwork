@@ -1,18 +1,20 @@
 import React, {createRef} from "react";
 import s from './Messages.module.css';
 import {NavLink} from "react-router-dom";
+import {actionCreatorSendNewMessage, actionCreatorChangeMessageTextArea} from "../../Redux/state";
+
 
 
 const Messages = (props) => {
 
-    const Dialog_item = (props) => {
+    const DialogItem = (props) => {
 
         return (
             <div className={s.dialog_item}>{props.message}</div>
         )
     };
 
-    const Dialog_user = (props) => {
+    const DialogUser = (props) => {
 
         let path = "/messages/" + props.id;
 
@@ -23,23 +25,30 @@ const Messages = (props) => {
         )
     };
 
-    let dialogsElements = props.dialogsUsersData.map((u) => {
+    let dialogsElements = props.messagesPage.dialogsUsersData.map((u) => {
             return (
-                <Dialog_user name={u.name} id={u.id}/>
+                <DialogUser name={u.name} id={u.id}/>
             )
         }
     );
-    let messagesElements = props.messagesData.map((m) => {
+    let messagesElements = props.messagesPage.messagesData.map((m) => {
             return (
-                <Dialog_item message={m.message} id={m.id}/>
+                <DialogItem message={m.message} id={m.id}/>
             )
         }
     );
 
-    let sendNewMessage = (props) => {
-        alert(newMessageElement.current.value);
-    };
-    let newMessageElement = createRef();
+    const cleanMessageTextArea = () => {
+
+    }
+    const changeMessageTextArea = (e) => {
+        props.dispatch(actionCreatorChangeMessageTextArea( e.target.value ))
+    }
+
+    const onSendMessageButtonClick = () => {
+        props.dispatch(actionCreatorSendNewMessage())
+    }
+
 
     return (
         <div className={s.dialogs}>
@@ -49,11 +58,11 @@ const Messages = (props) => {
             <div className={s.dialog_items}>
                 {messagesElements}
                 <div className="writeMessages">
-
-                    <textarea defaultValue="Write a message..." ref={newMessageElement}></textarea>
+                    <textarea onChange={ changeMessageTextArea }  value={props.messagesPage.messageTextAreaText}></textarea>
                 </div>
                 <br/>
-                <button onClick={sendNewMessage}>Send</button>
+                <button onClick={onSendMessageButtonClick}>Send</button>
+                <button onClick={cleanMessageTextArea}>Clean</button>
 
             </div>
         </div>

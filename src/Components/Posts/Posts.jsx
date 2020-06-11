@@ -1,27 +1,27 @@
 import React from 'react';
 import s from './Posts.module.css';
-import Add_new_post from "./Add_new_post/Add_new_post";
+import Add_new_post from './Add_new_post/Add_new_post';
 import Post from './Post/Post.jsx';
 
 
 
 const Posts = (props) => {
 
-
-
-    let postsElements = props.postsData.map( (p) => {
+    let postsElements = props.postsData.map( (el) => {
         return (
-            <Post message={p.message} likesCount={p.likesCount}/>
+            <Post message={el.postText} likesCount={el.likesCount}/>
         )
     })
 
 
     return (
         <div className={s.posts}>
-            <Add_new_post addPost={props.addPost}/>
+            <Add_new_post dispatch={props.dispatch}
+                          dispatch={props.dispatch}
+                          postTextArea={props.postTextArea}/>
             {postsElements}
         </div>
-    );
+    )
 }
 
 export default Posts;
