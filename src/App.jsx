@@ -27,8 +27,7 @@ const App = (props) => {
                                                            postTextArea={props.state.timelinePage.postTextArea}/>}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
                 <Route path="/messages" render={ () => <About_me />}/>
-                <Route path='/messages' render={ () => <Messages dialogsUsersData={props.state.messagesPage.dialogsUsersData}
-                                                                 messagesPage={props.state.messagesPage}
+                <Route path='/messages' render={ () => <Messages messagesPage={props.state.messagesPage}
                                                                  dispatch={props.dispatch}/>}/>
                 <Route path="/videos" render={ () => <Videos />}/>
                 <Route path="/photos" render={ () => <Photos />}/>

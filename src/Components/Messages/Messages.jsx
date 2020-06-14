@@ -1,7 +1,7 @@
 import React, {createRef} from "react";
 import s from './Messages.module.css';
 import {NavLink} from "react-router-dom";
-import {actionCreatorSendNewMessage, actionCreatorChangeMessageTextArea} from "../../Redux/state";
+import {actionCreatorSendNewMessage, actionCreatorChangeMessageTextArea} from "../../Redux/messgaesPageReducer";
 
 
 
@@ -31,6 +31,7 @@ const Messages = (props) => {
             )
         }
     );
+    debugger
     let messagesElements = props.messagesPage.messagesData.map((m) => {
             return (
                 <DialogItem message={m.message} id={m.id}/>

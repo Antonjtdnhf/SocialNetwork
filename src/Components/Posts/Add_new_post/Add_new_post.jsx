@@ -1,6 +1,6 @@
 import React, {createRef} from 'react';
 import s from './Add_new_post.module.css';
-import {actionCreatorAddNewPost, actionCreatorChangePostTextArea} from "../../../Redux/state";
+import {actionCreatorAddNewPost, actionCreatorChangePostTextArea} from "../../../Redux/timelinePageReducer";
 
 const Add_new_post = (props) => {
 
