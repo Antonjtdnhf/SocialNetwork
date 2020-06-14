@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import store from "./Redux/store";
+import store from "./Redux/reduxStore";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

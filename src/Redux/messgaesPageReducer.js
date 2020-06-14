@@ -1,4 +1,21 @@
-const messagesPageReducer = ( state , action ) => {
+let initialState = {
+        dialogsUsersData: [
+            {name: "Sasha", id: "1"},
+            {name: "John", id: "2"},
+            {name: "Kate", id: "3"},
+            {name: "Tom", id: "4"}
+        ],
+
+        messagesData: [
+            {id: 1, message: "Hi Sasha!"},
+            {id: 2, message: "Hi John!"},
+            {id: 3, message: "Hi Kate!"},
+            {id: 4, message: "Hi Tom!"}
+        ],
+        messageTextAreaText : 'Hello!'
+};
+
+const messagesPageReducer = ( state = initialState , action ) => {
     switch (action.type) {
         case "SEND_NEW_MESSAGE":
             let newMessage = {
@@ -13,9 +30,7 @@ const messagesPageReducer = ( state , action ) => {
             return state;
         default :
             return state;
-
     }
-    return state;
 }
 
 export const actionCreatorSendNewMessage = () => {
