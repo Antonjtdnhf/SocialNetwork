@@ -17,7 +17,6 @@ const Posts = (props) => {
     return (
         <div className={s.posts}>
             <Add_new_post dispatch={props.dispatch}
-                          dispatch={props.dispatch}
                           postTextArea={props.postTextArea}/>
             {postsElements}
         </div>

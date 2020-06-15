@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f23f27-a305-4354-9cae-2bad5544ed99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Redux/reduxStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/messgaesPageReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/messgaesPageReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/timelinePageReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/timelinePageReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Posts/Posts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Posts/Posts.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +88,8 @@
       <updated>1591954129991</updated>
       <workItem from="1591954134022" duration="654000" />
       <workItem from="1592051891399" duration="212000" />
-      <workItem from="1592140015599" duration="5873000" />
+      <workItem from="1592140015599" duration="6721000" />
+      <workItem from="1592200416543" duration="1907000" />
     </task>
     <servers />
   </component>
@@ -111,6 +106,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="570" y="251" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592141931094">
