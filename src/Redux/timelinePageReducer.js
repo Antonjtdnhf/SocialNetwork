@@ -10,22 +10,25 @@ let initialState = {
 
 const timelinePageReducer = ( state = initialState , action ) => {
         switch (action.type) {
-            case "ADD_NEW_POST" :
+            case "ADD_NEW_POST" :{
                 let newPost = {
                     postText: state.postTextArea,
                     likesCount: 0
                 }
-                state.postsData.push(newPost);
-                state.postTextArea = '';
-                return state;
-            case "CHANGE_POST_TEXT_AREA" :
-                state.postTextArea = action.message;
-                return state;
+                const stateCopy = {...state};
+                stateCopy.postsData = [...state.postsData];
+                stateCopy.postsData.push(newPost);
+                stateCopy.postTextArea = '';
+                return stateCopy;
+            }
+            case "CHANGE_POST_TEXT_AREA" :{
+                const stateCopy = {...state};
+                stateCopy.postTextArea = action.message;
+                return stateCopy;
+            }
             default :
                 return state;
         }
-
-
 }
 
 export const actionCreatorAddNewPost = () => {
