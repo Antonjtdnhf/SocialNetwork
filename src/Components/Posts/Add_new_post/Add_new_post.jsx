@@ -1,20 +1,19 @@
 import React, {createRef} from 'react';
 import s from './Add_new_post.module.css';
-import {actionCreatorAddNewPost, actionCreatorChangePostTextArea} from "../../../Redux/timelinePageReducer";
 
 const Add_new_post = (props) => {
 
 
     let text = createRef();
     let addNewPost = () => {
-        props.dispatch( actionCreatorAddNewPost() );
+        props.addNewPost();
 
 
     };
 
     let changeTextArea = () => {
-        props.dispatch( actionCreatorChangePostTextArea(text.current.value) );
-        text.current.value = props.postTextArea;
+        props.changeTextArea(text.current.value);
+
     }
 
 

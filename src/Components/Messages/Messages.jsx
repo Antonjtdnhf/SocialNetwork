@@ -25,14 +25,14 @@ const Messages = (props) => {
         )
     };
 
-    let dialogsElements = props.messagesPage.dialogsUsersData.map((u) => {
+    let dialogsElements = props.dialogsUsersData.map((u) => {
             return (
                 <DialogUser name={u.name} id={u.id}/>
             )
         }
     );
     debugger
-    let messagesElements = props.messagesPage.messagesData.map((m) => {
+    let messagesElements = props.messagesData.map((m) => {
             return (
                 <DialogItem message={m.message} id={m.id}/>
             )
@@ -43,11 +43,11 @@ const Messages = (props) => {
 
     }
     const changeMessageTextArea = (e) => {
-        props.dispatch(actionCreatorChangeMessageTextArea( e.target.value ))
+        props.changeMessageTextArea( e.target.value )
     }
 
     const onSendMessageButtonClick = () => {
-        props.dispatch(actionCreatorSendNewMessage())
+        props.onSendMessageButtonClick()
     }
 
 
@@ -59,7 +59,8 @@ const Messages = (props) => {
             <div className={s.dialog_items}>
                 {messagesElements}
                 <div className="writeMessages">
-                    <textarea onChange={ changeMessageTextArea }  value={props.messagesPage.messageTextAreaText}></textarea>
+                    <textarea onChange={ changeMessageTextArea }
+                              value={props.messageTextAreaText}></textarea>
                 </div>
                 <br/>
                 <button onClick={onSendMessageButtonClick}>Send</button>

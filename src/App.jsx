@@ -11,6 +11,7 @@ import {Route , BrowserRouter} from "react-router-dom";
 import Videos from "./Components/Videos/Videos";
 import Photos from "./Components/Photos/Photos";
 import Profile from "./Components/Profile/Profile";
+import Messages_container from "./Components/Messages/Messages_container";
 
 
 const App = (props) => {
@@ -21,13 +22,11 @@ const App = (props) => {
             <div className="app-wrapper">
                 <Header/>
                 <Route path="/posts" render={ () => <About_me />}/>
-                <Route path='/posts' render={ () => <Posts postsData={props.state.timelinePage.postsData}
-                                                           dispatch={props.dispatch}
-                                                           postTextArea={props.state.timelinePage.postTextArea}/>}/>
+                <Route path='/posts' render={ () => <Posts store={props.store} />}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
                 <Route path="/messages" render={ () => <About_me />}/>
-                <Route path='/messages' render={ () => <Messages messagesPage={props.state.messagesPage}
-                                                                 dispatch={props.dispatch}/>}/>
+                <Route path='/messages' render={ () => <Messages_container store={props.store}
+                                                                 store={props.store}/>}/>
                 <Route path="/videos" render={ () => <Videos />}/>
                 <Route path="/photos" render={ () => <Photos />}/>
                 <Route path="/profile" render={ () => <Profile />}/>
