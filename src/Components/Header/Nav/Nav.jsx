@@ -16,7 +16,7 @@ const Nav = () => {
                     <NavLink to='/messages' activeClassName={s.active}>Messages</NavLink>
                 </li>
                 <li>
-                    <NavLink to='/videos' activeClassName={s.active}>Videos</NavLink>
+                    <NavLink to='/usersSearch' activeClassName={s.active}>Users Search</NavLink>
                 </li>
                 <li>
                     <NavLink to='photos' activeClassName={s.active}>Photos</NavLink>

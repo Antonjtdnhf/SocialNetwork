@@ -12,6 +12,7 @@ import Photos from "./Components/Photos/Photos";
 import Profile from "./Components/Profile/Profile";
 import Messages_container from "./Components/Messages/Messages_container";
 import Posts_container from "./Components/Posts/Posts_container";
+import Users_search_container from "./Components/Users_search/Users_search_container";
 
 
 const App = (props) => {
@@ -21,12 +22,12 @@ const App = (props) => {
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
-                <Route path="/posts" render={ () => <About_me />}/>
+                <Route path="/usersSearch" render={ () => <Users_search_container />}/>
+                <Route path={["/posts", "/messages", "/usersSearch"]} render={ () => <About_me />}/>
                 <Route path='/posts' render={ () => <Posts_container />}/>
                 <Route path="/posts" render={ () => <Last_photos />}/>
-                <Route path="/messages" render={ () => <About_me />}/>
                 <Route path='/messages' render={ () => <Messages_container />}/>
-                <Route path="/videos" render={ () => <Videos />}/>
+              {/*  <Route path="/videos" render={ () => <Videos />}/>*/}
                 <Route path="/photos" render={ () => <Photos />}/>
                 <Route path="/profile" render={ () => <Profile />}/>
                 <Footer/>
