@@ -41,7 +41,7 @@ let initialState = {
 };
 
 const usersSearchReducer = (state = initialState, action) => {
-    debugger
+
     switch (action.type) {
         case "FOLLOW": {
             return ({
@@ -86,7 +86,7 @@ export const actionCreatorUnFollow = (userId) => {
     return {type: "UNFOLLOW", id: userId}
 }
 export const actionCreatorSetUsers = (users) => {
-    return {type: "SET_USERS", users: users}
+    return {type: "SET_USERS", users}
 }
 
 export default usersSearchReducer;

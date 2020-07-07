@@ -6,7 +6,6 @@ import Add_new_post from "./Add_new_post/Add_new_post";
 
 
 const Posts = (props) => {
-    debugger
     let postsElements = props.postsData.map( (el) => {
         return (
             <Post message={el.postText} likesCount={el.likesCount}/>
