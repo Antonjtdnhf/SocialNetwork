@@ -37,6 +37,10 @@ let initialState = {
             location: {city: "Minsk", country: "Belarus"}
         }*/
     ],
+    numberOfUsers: 0,
+    numberOfUsersOnOnePage: 5,
+    currentPage: 1
+
 
 };
 
@@ -68,10 +72,28 @@ const usersSearchReducer = (state = initialState, action) => {
             )
         }
         case "SET_USERS": {
+
             return ({
                 ...state,
-                users: [...state.users, ...action.users]
+                users: [...action.users]
             })
+
+        }
+        case "SET_TOTAL_USERS_COUNT": {
+
+            return ({
+                ...state,
+                numberOfUsers: action.totalUsersCount
+            })
+
+        }
+        case "CHANGE_CURRENT_PAGE": {
+
+            return ({
+                ...state,
+                currentPage: action.currentPage
+            })
+
         }
         default :
             return state;
@@ -85,8 +107,14 @@ export const actionCreatorFollow = (userId) => {
 export const actionCreatorUnFollow = (userId) => {
     return {type: "UNFOLLOW", id: userId}
 }
-export const actionCreatorSetUsers = (users) => {
-    return {type: "SET_USERS", users}
+export const actionCreatorSetUsers = (users ) => {
+    return {type: "SET_USERS", users }
+}
+export const actionCreatorChangeCurrentPage = (currentPage) => {
+    return {type: "CHANGE_CURRENT_PAGE", currentPage}
+}
+export const actionCreatorSetTotalUsersCount = (totalUsersCount) => {
+        return {type: "SET_TOTAL_USERS_COUNT", totalUsersCount}
 }
 
 export default usersSearchReducer;

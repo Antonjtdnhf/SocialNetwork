@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './About_me.module.css';
+import s from './AboutMe.module.css';
 
-const About_me = () =>{
+const AboutMe = () =>{
     return(
     <div className={s.about_me}>
       <span>
@@ -21,4 +21,4 @@ const About_me = () =>{
     );
 }
 
-export default About_me;
+export default AboutMe;

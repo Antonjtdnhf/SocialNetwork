@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Posts.module.css';
 import Post from './Post/Post.jsx';
-import Add_new_post from "./Add_new_post/Add_new_post";
+import AddNewPost from "./AddNewPost/AddNewPost";
 
 
 
@@ -15,9 +15,9 @@ const Posts = (props) => {
 
     return (
         <div className={s.posts}>
-            <Add_new_post addNewPost={props.addNewPost}
-                          changeTextArea={props.changeTextArea}
-                          postTextArea={props.postTextArea}/>
+            <AddNewPost addNewPost={props.addNewPost}
+                        changeTextArea={props.changeTextArea}
+                        postTextArea={props.postTextArea}/>
             {postsElements}
         </div>
     )

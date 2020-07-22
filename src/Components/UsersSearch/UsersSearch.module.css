@@ -2,7 +2,16 @@
     display:flex;
     flex-direction: column;
     grid-template-columns: 2fr 10fr;
+    width: 600px;
 
+}
+
+.pages{
+    overflow: auto;
+}
+
+.selected {
+    font-weight: bold;
 }
 
 .dialog_users {

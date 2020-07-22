@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Last_photos.module.css';
+import s from './LastPhotos.module.css';
 
-const Last_photos = () => {
+const LastPhotos = () => {
     return(
         <div className={s.last_photos}>
 
@@ -9,4 +9,4 @@ const Last_photos = () => {
     );
 }
 
-export default Last_photos;
+export default LastPhotos;

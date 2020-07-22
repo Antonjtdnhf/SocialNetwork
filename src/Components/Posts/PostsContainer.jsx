@@ -5,7 +5,7 @@ import Posts from "./Posts";
 
 
 
-/*const Posts_container = (props) => {
+/*const PostsContainer = (props) => {
 
     let postsElements = props.store.getState().timelinePage.postsData.map( (el) => {
         return (
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const Posts_container = connect(mapStateToProps, mapDispatchToProps)(Posts)
+const PostsContainer = connect(mapStateToProps, mapDispatchToProps)(Posts)
 
 
-export default Posts_container;
+export default PostsContainer;

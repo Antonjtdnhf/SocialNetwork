@@ -31,7 +31,6 @@ const Messages = (props) => {
             )
         }
     );
-    debugger
     let messagesElements = props.messagesData.map((m) => {
             return (
                 <DialogItem message={m.message} id={m.id}/>

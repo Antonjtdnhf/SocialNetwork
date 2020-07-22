@@ -1,7 +1,7 @@
 import React, {createRef} from 'react';
-import s from './Add_new_post.module.css';
+import s from './AddNewPost.module.css';
 
-const Add_new_post = (props) => {
+const AddNewPost = (props) => {
 
 
     let text = createRef();
@@ -28,4 +28,4 @@ const Add_new_post = (props) => {
     )
 }
 
-export default Add_new_post;
+export default AddNewPost;

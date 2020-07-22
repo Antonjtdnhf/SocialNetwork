@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 
 
 
-/*const Messages_container = (props) => {
+/*const MessagesContainer = (props) => {
 
 
     const cleanMessageTextArea = () => {
@@ -48,6 +48,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const Messages_container = connect(mapStateToProps, mapDispatchToProps)(Messages)
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages)
 
-export default Messages_container;
+export default MessagesContainer;
