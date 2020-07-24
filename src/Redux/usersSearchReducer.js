@@ -40,7 +40,7 @@ let initialState = {
     numberOfUsers: 0,
     numberOfUsersOnOnePage: 5,
     currentPage: 1,
-    isLoading: false
+    isLoading: true
 
 
 };

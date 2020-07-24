@@ -30,6 +30,7 @@ class UserSearchContainerComponent extends React.Component {
             this.props.actionCreatorSetUsers(response.data.items)
             this.props.actionCreatorIsLoading(false)
         })
+
     }
 
 
@@ -90,5 +91,12 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const UsersSearchContainer = connect(mapStateToProps, mapDispatchToProps)(UserSearchContainerComponent)
+const UsersSearchContainer = connect(mapStateToProps,
+        {actionCreatorFollow,
+        actionCreatorUnFollow,
+        actionCreatorSetUsers,
+        actionCreatorChangeCurrentPage,
+        actionCreatorSetTotalUsersCount,
+        actionCreatorIsLoading})(UserSearchContainerComponent)
+
 export default UsersSearchContainer;
