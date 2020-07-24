@@ -39,7 +39,8 @@ let initialState = {
     ],
     numberOfUsers: 0,
     numberOfUsersOnOnePage: 5,
-    currentPage: 1
+    currentPage: 1,
+    isLoading: false
 
 
 };
@@ -88,12 +89,17 @@ const usersSearchReducer = (state = initialState, action) => {
 
         }
         case "CHANGE_CURRENT_PAGE": {
-
             return ({
                 ...state,
                 currentPage: action.currentPage
             })
 
+        }
+        case "IS_LOADING": {
+            return   ({
+                ...state,
+                isLoading: action.isLoading
+            })
         }
         default :
             return state;
@@ -115,6 +121,9 @@ export const actionCreatorChangeCurrentPage = (currentPage) => {
 }
 export const actionCreatorSetTotalUsersCount = (totalUsersCount) => {
         return {type: "SET_TOTAL_USERS_COUNT", totalUsersCount}
+}
+export const actionCreatorIsLoading = (isLoading) => {
+    return { type: "IS_LOADING" , isLoading}
 }
 
 export default usersSearchReducer;
