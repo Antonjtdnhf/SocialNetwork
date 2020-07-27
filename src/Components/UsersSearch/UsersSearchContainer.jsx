@@ -11,7 +11,7 @@ import * as axios from "axios";
 import preloader from "../../assets/images/preloader.gif";
 
 //-----------------------------------------CONTAINER COMPONENT-----------------------------------------------------
-class UserSearchContainerComponent extends React.Component {
+class UsersSearchContainer extends React.Component {
     componentDidMount() {
         if (this.props.users.length === 0) {
             this.props.actionCreatorIsLoading(true)
@@ -42,7 +42,7 @@ class UserSearchContainerComponent extends React.Component {
         }
         return (
             <div>
-                { this.props.isLoading ? <img src={preloader} alt="preloader"/> : null}
+                { this.props.isLoading ? <img src={preloader} alt="loading"/> : null}
                 <UsersSearch users={this.props.users}
                              pages={pages}
                              currentPage={this.props.currentPage}
@@ -68,35 +68,10 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        actionCreatorFollow: (userId) => {
-            dispatch(actionCreatorFollow(userId))
-        },
-        actionCreatorUnFollow: (userId) => {
-            dispatch(actionCreatorUnFollow(userId))
-        },
-        actionCreatorSetUsers: (users) => {
-            dispatch(actionCreatorSetUsers(users))
-        },
-        actionCreatorChangeCurrentPage: (currentPage) => {
-            dispatch(actionCreatorChangeCurrentPage(currentPage))
-        },
-        actionCreatorSetTotalUsersCount: (totalUsersCount) => {
-            dispatch(actionCreatorSetTotalUsersCount(totalUsersCount))
-        },
-        actionCreatorIsLoading: (isLoading) => {
-            dispatch(actionCreatorIsLoading(isLoading))
-        }
-    }
-}
-
-const UsersSearchContainer = connect(mapStateToProps,
+export default UsersSearchContainer = connect(mapStateToProps,
         {actionCreatorFollow,
         actionCreatorUnFollow,
         actionCreatorSetUsers,
         actionCreatorChangeCurrentPage,
         actionCreatorSetTotalUsersCount,
-        actionCreatorIsLoading})(UserSearchContainerComponent)
-
-export default UsersSearchContainer;
+        actionCreatorIsLoading})(UsersSearchContainer)

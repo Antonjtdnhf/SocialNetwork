@@ -6,7 +6,7 @@
   "about_me posts last_photos"
   "footer footer footer";
   grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 0.5fr 1fr 100px;
+  grid-template-rows: 500px 1fr 100px;
   grid-gap: 10px;
 
   max-width: 1250px;

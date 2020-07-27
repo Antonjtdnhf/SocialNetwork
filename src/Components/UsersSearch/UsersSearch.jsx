@@ -1,5 +1,7 @@
 import React from "react";
 import s from './UsersSearch.module.css';
+import avaExample from './../../assets/images/avaExample.jpg'
+import {NavLink} from "react-router-dom";
 
 const UsersSearch = (props) => {
     return (
@@ -15,8 +17,10 @@ const UsersSearch = (props) => {
             {props.users.map((user) => {
                 return (
                     <div>
-                        <div><img alt="avatar"/></div>
-                        <div>{user.name}</div>
+                        <NavLink to={`/profile/${user.id}`}>
+                            <div><img src={user.photos.small!=null ? user.photos.small : avaExample} alt="avatar"/></div>
+                            <div>{user.name}</div>
+                        </NavLink>
                         <div></div>
                         <div></div>
                         <div></div>
