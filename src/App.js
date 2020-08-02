@@ -27,7 +27,7 @@ const App = (props) => {
                 <Route path='/messages' render={ () => <MessagesContainer />}/>
               {/*  <Route path="/videos" render={ () => <Videos />}/>*/}
                 <Route path="/photos" render={ () => <Photos />}/>
-                <Route path="/profile" render={ () => <ProfileContainer />}/>
+                <Route path="/profile/:userId?" render={ () => <ProfileContainer />}/>
                 <Footer/>
             </div>
         </BrowserRouter>
